@@ -1,0 +1,8 @@
+<div>
+    <h1>Change your page</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{p_edit.as_p}}
+        <button type="submit">제출하기</button>
+    </form>
+</div>

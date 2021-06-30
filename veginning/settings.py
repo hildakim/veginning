@@ -123,15 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
+STATICFILES_DIRS = [ 
+    os.path.join(BASE_DIR, 'main', 'static'),
     os.path.join(BASE_DIR, 'account', 'static')
-] 
-# 현재 static 파일들이 어디에 있는지
-
+ ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# static 파일을 어디에 모을건지
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type

@@ -1,0 +1,216 @@
+<head>
+<style>
+    section {
+        border: solid 1px black;
+    }
+    .main-store{
+        display: inline;
+        float: left;
+        width: 49%;
+    }
+    .main-community {
+        display:inline;
+        float: left;
+        width: 50%;
+    }
+    
+    .main-slider{
+        position:relative;
+        width:100%;
+        overflow: hidden;
+    }
+
+    .slider-container{
+        position: absolute;
+        width:100%;
+    }
+
+    .slide {
+        position: absolute;
+        width: 100%;
+        padding:0 10%;
+        box-sizing: border-box;
+        /* 슬라이더 안의 내용이 높이가 다르더라도 가운데에 맞출수 있게
+            top을 50%으로 하고 다시 자기크기의 반만큼 위로 올라오게 */
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        overflow: hidden;
+    }
+    .slider-container.animated {
+        -webkit-transition: left .3s ease-in;
+        transition: left .3s ease-in;
+    }
+
+    #prev, #next {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+        display: inline-block;
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+    }
+    #prev.disabled, #next.disabled {
+        display: none;
+    }
+    #prev {
+        margin-left: -480px;
+        background-image: url('./arrow.png');
+    }
+    #next {
+        margin-left:380px;
+        background-image: url('./arrow.png');
+    }
+
+    .list_prd-best {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    table, tr, td{
+        border: solid 1px black;
+    }
+</style>
+
+
+</head>
+
+<section class="main-slider">
+    <ul class="slider-container">
+        <li class="slide">
+            <span>슬라이드의 첫번째 요소</span>
+            <!-- <img src="https://images.theconversation.com/files/385014/original/file-20210218-17-1fx1dvr.jpg?ixlib=rb-1.1.0&rect=559%2C469%2C4882%2C2922&q=45&auto=format&w=496&fit=clip"> -->
+        </li>
+        <li class="slide">
+            <span>슬라이드의 두번째 요소</span>
+            <!-- <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/5FC8/production/_117802542_gettyimages-578258900-594x594.jpg"> -->
+        </li>
+        <li class="slide">
+            <span>슬라이드의 세번째 요소</span>
+            <!-- <img src="https://images.ctfassets.net/82d3r48zq721/45liwTLsDMSJt4N22RqrHX/cd992f88ca8737f95b085212906d6d86/Can-cats-and-dogs-get-coronavirus_resized.jpg?w=800&q=50"> -->
+        </li>
+    </ul>
+
+    <a href="#" id="prev"><img src="arrow.png"></a>
+    <a href="#" id="next"><img src="arrow.png"></a>
+</section>
+
+<section class="main-store">
+    <div class="box_prd-best">
+        <h3>인기 상품</h3>>
+        <ul class="list_prd-best">
+            <li class="prd-best-item">
+                <div class="wrap_prd-best-item">
+                    <div class="prd-thumb"></div>
+                    <div class="prd-info"></div>
+                </div>
+            </li>
+            <li class="prd-best-item">
+                <div class="wrap_prd-best-item">
+                    <div class="prd-thumb"></div>
+                    <div class="prd-info"></div>
+                </div>
+            </li>
+            <li class="prd-best-item">
+                <div class="wrap_prd-best-item">
+                    <div class="prd-thumb"></div>
+                    <div class="prd-info"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</section>
+
+<section class="main-community">
+    <div class="box_community-best">
+        <h3>커뮤니티 인기글</h3>
+        <table>
+            <tr>
+                <td rowspan="2">이미지</td>
+                <td>제목</td>
+            </tr>
+            <tr>
+                <td>내용 요약</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+<script>
+    //변수
+    var sliderWrapper = document.getElementsByClassName("main-slider"),
+        sliderContainer = document.getElementsByClassName('slider-container'),
+        slides = document.getElementsByClassName('slide'),
+        slideCount = slides.length, //슬라이드 개수
+        currentIndex = 0, //현재 몇번째 슬라이드?
+        topHeight = 0, //자식요소들 중 가장 높이가 큰 거 구할때 쓸것
+        navPrev = document.getElementById('prev'),
+        navNext = document.getElementById('next');
+
+    //슬라이드의 높이 확인하여 부모의 높이로 지정
+    function calculateTallestSlides(){
+        for(var i = 0; i < slideCount; i++){
+            if(slides[i].offsetHeight > topHeight){
+                topHeight = slides[i].offsetHeight;
+            }
+        }
+        sliderWrapper[0].style.height = topHeight +'px';
+        sliderContainer[0].style.height = topHeight +'px';
+    }
+
+    calculateTallestSlides();
+    
+    //슬라이드 가로 배열하기
+    for(var i = 0; i < slideCount; i++){
+        slides[i].style.left = i*100 + '%'; 
+    }
+    
+    //슬라이드 이동 함수
+    function goToSlide(idx){
+        sliderContainer[0].style.left = idx * -100 + '%';
+        sliderContainer[0].classList.add('animated');
+        currentIndex = idx;
+
+        updateNav();
+    }
+
+    //임의로..
+    sliderWrapper[0].style.height = 500 +'px';
+    sliderContainer[0].style.height = 500 +'px';
+    
+    //버튼 기능 업데이트 함수
+    function updateNav(){
+        //슬라이드 처음일때
+        if(currentIndex == 0){
+            navPrev.classList.add('disabled');
+        } else{
+            navPrev.classList.remove('disabled');
+        }
+        //슬라이드 끝일때
+        if(currentIndex == slideCount-1){
+            navNext.classList.add('disabled');
+        } else {
+            navNext.classList.remove('disabled');
+        }
+    }
+
+
+    //버튼을 클릭하면 슬라이드 이동
+    navPrev.addEventListener('click', function(event){
+        event.preventDefault(0); //a의 기본 기능 막기
+        goToSlide(currentIndex - 1);
+    });
+    navNext.addEventListener('click', function(evevt){
+        event.preventDefault(0); 
+        goToSlide(currentIndex + 1);
+    });
+
+    //첫번째 슬라이드 먼저 보이도록 하기(prev버튼 없어야하기때문에)
+    goToSlide(0);
+</script>
