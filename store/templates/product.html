@@ -1,43 +1,76 @@
-<style>
-    ul {
-        list-style: none;
-        text-align: left;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .hh {
-        text-align: center;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            list-style: none;
+            text-align: left;
+        }
 
-    .pp {
-        float: right;
-    }
+        .hh {
+            text-align: center;
+        }
 
-    .items {
-        width: 230px;
-        float: left;
-        margin: 30px 0 0 25px;
-    }
+        .pp {
+            float: right;
+        }
 
-    .items .a {
-        font-weight: bold;
-        color: black;
-        margin-top: 20px;
-    }
+        .items {
+            width: 230px;
+            float: left;
+            margin: 30px 0 0 25px;
+        }
 
-    .items .b {
-        font-weight: bold;
-        color: black;
-        margin-top: 8px;
-    }
+        .items .a {
+            font-weight: bold;
+            color: black;
+            margin-top: 20px;
+        }
 
-    .items .c {
-        font-size: 12px;
-        margin-top: 10px;
-        line-height: 30px;
-    }
-</style>
+        .items .b {
+            font-weight: bold;
+            color: black;
+            margin-top: 8px;
+        }
 
-<body>
+        .items .c {
+            font-size: 12px;
+            margin-top: 10px;
+            line-height: 30px;
+        }
+
+        footer {
+            margin-top: 100px;
+            border-top: solid 1px #dddddd;
+        }
+
+        #footer_menu li {
+            display: inline;
+        }
+
+        #footer_menu {
+            padding-top: 30px;
+        }
+
+        .footers {
+            float: left;
+        }
+
+        .section {
+            width: max-content;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<section>
     <div>
         <h3 class="hh">전체상품</h3>
         <p class="pp">판매자추천순 | 인기도순 | 최신등록순 </p>
@@ -48,28 +81,52 @@
             <a href="?p_page=1">first_page</a>
             <a href="?p_page={{p_posts.previous_page_number}}">previous</a>
             {% endif %}
-    
+
             <span>{{p_posts.number}}</span>
             <span>of</span>
             <span>{{p_posts.paginator.num_pages}}</span>
-    
+
             {% if p_posts.has_next %}
             <a href="?p_page={{p_posts.next_page_number}}">Next</a>
             <a href="?p_page={{p_posts.paginator.num_pages}}">Last</a>
             {% endif %}
         </div>
+
+        <div>
+            {% for p_obj in p_posts %}
+            <ul class="items">
+                {% if p_obj.image %}
+                <li>
+                    <p><img src="{{p_obj.thumbnail.url}}"></p>
+                </li>
+                {% endif %}
+                <li class="a">{{p_obj.title}}</li>
+                <li class="b">{{p_obj.writer}}</li>
+                <li class="c">{{p_obj.summary}}<a href="{% url 'productsub' p_obj.id %}">...more</a></li>
+            </ul>
+            {% endfor %}
+            <br><br>
+        </div>
     </div>
-    <div>
-        {% for p_obj in p_posts %}
-        <ul class="items">
-            {% if p_obj.image %}
-            <li><p><img src="{{p_obj.thumbnail.url}}"></p></li>
-            {% endif %}
-            <li class="a">{{p_obj.title}}</li>
-            <li class="b">{{p_obj.writer}}</li>
-            <li class="c">{{p_obj.summary}}<a href="{% url 'productsub' p_obj.id %}">...more</a></li>
+    <div class="clear"></div>
+</section>
+
+<footer>
+    <div class="footers">
+        <ul>
+            <h3>Veginning(주)</h3>
+            <li>사업자 등록번호 1234</li>
+            <li>대표이사 해리포터 | 호그와트 12345</li>
+            <li>전화 1234-56789</li>
         </ul>
-        {% endfor %}
-        <br><br>
     </div>
-</body>
+    <div class="footers">
+        <ul>
+            <h3>고객센터</h3>
+            <li>1:1 문의 바로가기</li>
+            <li>전자금융거래 분쟁처리</li>
+        </ul>
+    </div>
+</footer>
+
+</html>
