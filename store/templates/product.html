@@ -1,45 +1,75 @@
+<style>
+    ul {
+        list-style: none;
+        text-align: left;
+    }
 
-{% for p_obj in p_posts %}
+    .hh {
+        text-align: center;
+    }
 
-<br>
-<div class="main">
-   
-    <br>
-    <div class="flip-box">
-        <div class="flip">
-            <div class ="front">
-                {% if p_obj.image %}
-                <p><img src="{{p_obj.thumbnail.url}}"></p>
-                {% endif %}
-            </div>
-            <div class="back">
-                    <h3>{{p_obj.title}}</h3>
-                    {{p_obj.writer}}/
-                    {{p_obj.summary}}
-                    <a href="{% url 'productsub' p_obj.id %}">...more</a>
-                    <br><br>
-            </div>
+    .pp {
+        float: right;
+    }
+
+    .items {
+        width: 230px;
+        float: left;
+        margin: 30px 0 0 25px;
+    }
+
+    .items .a {
+        font-weight: bold;
+        color: black;
+        margin-top: 20px;
+    }
+
+    .items .b {
+        font-weight: bold;
+        color: black;
+        margin-top: 8px;
+    }
+
+    .items .c {
+        font-size: 12px;
+        margin-top: 10px;
+        line-height: 30px;
+    }
+</style>
+
+<body>
+    <div>
+        <h3 class="hh">전체상품</h3>
+        <p class="pp">판매자추천순 | 인기도순 | 최신등록순 </p>
+        <br><br>
+        <div>
+            <a href="{% url 'productnew' %}">Write</a>
+            {%if p_posts.has_previous %}
+            <a href="?p_page=1">first_page</a>
+            <a href="?p_page={{p_posts.previous_page_number}}">previous</a>
+            {% endif %}
+    
+            <span>{{p_posts.number}}</span>
+            <span>of</span>
+            <span>{{p_posts.paginator.num_pages}}</span>
+    
+            {% if p_posts.has_next %}
+            <a href="?p_page={{p_posts.next_page_number}}">Next</a>
+            <a href="?p_page={{p_posts.paginator.num_pages}}">Last</a>
+            {% endif %}
         </div>
     </div>
-</div>
-<br>
-{% endfor %}
-
-<div class="container">
-    <br><br>
-    <a href="{% url 'productnew' %}">Write</a>
-    {%if p_posts.has_previous %}
-    <a href ="?p_page=1">first_page</a>
-    <a href ="?p_page={{p_posts.previous_page_number}}">previous</a>
-    {% endif %}
-
-    <span>{{p_posts.number}}</span>
-    <span>of</span>
-    <span>{{p_posts.paginator.num_pages}}</span>
-
-    {% if p_posts.has_next %}
-    <a href ="?p_page={{p_posts.next_page_number}}">Next</a>
-    <a href ="?p_page={{p_posts.paginator.num_pages}}">Last</a>
-    {% endif %}
-</div>
-
+    <div>
+        {% for p_obj in p_posts %}
+        <ul class="items">
+            {% if p_obj.image %}
+            <li><p><img src="{{p_obj.thumbnail.url}}"></p></li>
+            {% endif %}
+            <li class="a">{{p_obj.title}}</li>
+            <li class="b">{{p_obj.writer}}</li>
+            <li class="c">{{p_obj.summary}}<a href="{% url 'productsub' p_obj.id %}">...more</a></li>
+        </ul>
+        {% endfor %}
+        <br><br>
+    </div>
+</body>
