@@ -1,22 +1,32 @@
 <style>
     .sub {
         float: left;
-        margin-left: 20px;
-        margin-right: 30px;
+        padding-right: 40px;
+        padding-left:20px;
+    }
+    .sub2{
+        text-align: center;
+        border-bottom:2px solid black;
+    }
+    .sub3{
+        float:left;
     }
     ul {
         list-style: none;
         text-align: left;
     }
-    .a{
+
+    .a {
         color: black;
         margin-top: 35px;
     }
+
     .b {
         color: black;
         margin-top: 8px;
     }
-    .c{
+
+    .c {
         font-weight: bold;
     }
 </style>
@@ -26,16 +36,31 @@
     <a href="{% url 'productedit' psub.id %}">수정하기</a>
     <br><br>
     <div>
-        <div class="sub">
-            {% if psub.image %}
-            <p><img src="{{psub.image.url}}" alt="" width="450" height="500"></p>
-            {% endif %}
-        </div>
-        <ul>
-            <li class="a"><h1>{{psub.title}}</h1></li>
-            <li class="b"><h3>{{psub.writer}}</h3></li>
-            <li class="c">구입처-{{psub.body}}</li>
-            <li>{{psub.body2}}</li>
-        </ul>
+        <table>
+            <div class="sub">
+                {% if psub.image %}
+                <p><img src="{{psub.image.url}}" alt="" width="450" height="500"></p>
+                {% endif %}
+            </div>
+            <tbody class="sub3">
+                <tr>
+                    <td class="sub2" colspan="2">
+                        <h1>{{psub.title}}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <th>업체</th>
+                    <td>{{psub.writer}}</td>
+                </tr>
+                <tr>
+                    <th>구입 주소</th>
+                    <td>{{psub.body}}</td>
+                </tr>
+                <tr>
+                    <th>설명</th>
+                    <td>{{psub.body2}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
