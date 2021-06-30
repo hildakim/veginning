@@ -1,29 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <style>
     section {
-        border: solid 1px black;
+        /* border: solid 1px black; */
     }
     .main-store{
-        display: inline;
-        float: left;
-        width: 49%;
+        /* display: inline; */
+        /* float: left; */
+        /* width: 49%; */
+        background-color: rgb(234, 247, 215);
+        padding: 20px;
     }
     .main-community {
-        display:inline;
-        float: left;
-        width: 50%;
+        /* display:inline; */
+        /* float: left; */
+        /* width: 50%; */
+        background-color: white;
+        padding: 20px;
     }
     
     .main-slider{
         position:relative;
         width:100%;
         overflow: hidden;
+        margin: 0 auto;
     }
 
     .slider-container{
         position: absolute;
         width:100%;
-    }
+        padding: 0;
+        margin: 0;
+    }   
 
     .slide {
         position: absolute;
@@ -49,20 +60,20 @@
         transform: translateY(-50%);
         z-index: 9999;
         display: inline-block;
-        height: 5em;
-        width: 5em;
+        height: 3em;
+        width: 3em;
         border-radius: 50%;
     }
     #prev.disabled, #next.disabled {
         display: none;
     }
     #prev {
-        margin-left: -480px;
-        background-image: url('./arrow.png');
+        margin-left: -520px;
+        background-image: url("{% static 'left-arrow.svg' %}");
     }
     #next {
-        margin-left:380px;
-        background-image: url('./arrow.png');
+        margin-left:480px;
+        background-image: url("{% static 'right-arrow.svg' %}");
     }
 
     .list_prd-best {
@@ -70,57 +81,136 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        list-style-type: none;
+        padding-left: 0;
+        width: 1000px;
+        margin:50 auto;
     }
     table, tr, td{
         border: solid 1px black;
     }
+    .slide-img {
+        width : 100%;
+        overflow: hidden;
+    }
+    .prd-thumb {
+        overflow: hidden;
+    }
+    .prd-thumb img{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+    .prd-thumb img:hover{
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transition: .7s;
+    }
+    .wrap_prd-best-item{
+      padding: 5px;
+      background-color: white;
+    }
+    .list_prd-best{
+        /* border: 1px solid black; */
+    }
+    .box_community-best img {
+        width: 150px;
+    }
+    .slide {
+        width: 100%;
+        height: 400px;
+    }
+    .prd-best-item {
+        margin: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: 1px 1px 5px 6px rgba(179, 179, 179, 0.3);
+    }
+    .prd-best-item:hover {
+        box-shadow: 1px 1px 5px 8px rgba(138, 138, 138, 0.281);
+    }
+    .prd-info {
+        padding: 10px;
+        background-color: white;
+    }
+    /* .box_prd-best {
+        margin: 0 auto;
+    } */
+    /* .list_prd-best{
+        margin: 0 auto;
+    } */
+
+    .box_prd-best, .box_community-best {
+        margin-left: 130px;
+        margin-right: 130px;
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+    body {
+        /* background-color: antiquewhite; */
+    }
+    .slide {
+        background-color: white;
+    }
+    .box_prd-best, .box_community-best {
+        font-family: 'NanumSquare', sans-serif !important;
+    }
+    
 </style>
 
 
 </head>
 
+
 <section class="main-slider">
     <ul class="slider-container">
         <li class="slide">
-            <span>슬라이드의 첫번째 요소</span>
-            <!-- <img src="https://images.theconversation.com/files/385014/original/file-20210218-17-1fx1dvr.jpg?ixlib=rb-1.1.0&rect=559%2C469%2C4882%2C2922&q=45&auto=format&w=496&fit=clip"> -->
+            <img class="slide-img" src="{% static 'vegetable1.jpg' %}">
         </li>
         <li class="slide">
-            <span>슬라이드의 두번째 요소</span>
-            <!-- <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/5FC8/production/_117802542_gettyimages-578258900-594x594.jpg"> -->
+            <img class="slide-img" src="{% static 'vegetable2.jpg' %}">
         </li>
         <li class="slide">
-            <span>슬라이드의 세번째 요소</span>
-            <!-- <img src="https://images.ctfassets.net/82d3r48zq721/45liwTLsDMSJt4N22RqrHX/cd992f88ca8737f95b085212906d6d86/Can-cats-and-dogs-get-coronavirus_resized.jpg?w=800&q=50"> -->
+            <img class="slide-img" src="{% static 'vegetable3.jpg' %}">
         </li>
     </ul>
 
-    <a href="#" id="prev"><img src="arrow.png"></a>
-    <a href="#" id="next"><img src="arrow.png"></a>
+    <a href="#" id="prev"><img src="{% static 'left-arrow.svg' %}"></a>
+    <a href="#" id="next"><img src="{% static 'right-arrow.svg' %}"></a>
 </section>
 
 <section class="main-store">
     <div class="box_prd-best">
-        <h3>인기 상품</h3>>
+        <h2>인기 상품</h2>
         <ul class="list_prd-best">
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
-                    <div class="prd-thumb"></div>
-                    <div class="prd-info"></div>
+                    <div class="prd-thumb"><img src="{% static 'noodle.jpg' %}"></div>
+                    <div class="prd-info"><span>맛있는 라면</span><br><p>4000원</p></div>
                 </div>
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
-                    <div class="prd-thumb"></div>
-                    <div class="prd-info"></div>
+                    <div class="prd-thumb"><img src="{% static 'mayo.jpg' %}"></div>
+                    <div class="prd-info"><span>마요네즈</span><br><p>4000원</p></div>
                 </div>
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
-                    <div class="prd-thumb"></div>
-                    <div class="prd-info"></div>
+                    <div class="prd-thumb"><img src="{% static 'activia.jpg' %}"></div>
+                    <div class="prd-info"><span>식물성 액티비아</span><br><p>4000원</p></div>
                 </div>
             </li>
+            <li class="prd-best-item">
+                <div class="wrap_prd-best-item">
+                    <div class="prd-thumb"><img src="{% static 'activia.jpg' %}"></div>
+                    <div class="prd-info"><span>식물성 액티비아</span><br><p>4000원</p></div>
+                </div>
+            </li>
+            
         </ul>
     </div>
     
@@ -128,14 +218,14 @@
 
 <section class="main-community">
     <div class="box_community-best">
-        <h3>커뮤니티 인기글</h3>
+        <h2>커뮤니티 인기글</h2>
         <table>
             <tr>
-                <td rowspan="2">이미지</td>
-                <td>제목</td>
+                <td rowspan="2"><img src="{% static 'activia.jpg' %}"></td>
+                <td>연남동 비건 식당 후기</td>
             </tr>
             <tr>
-                <td>내용 요약</td>
+                <td>어제 어디어디에 있다는 어디 비건식당을 갔음. 가격은 이정도고 동물성 원료는 ...</td>
             </tr>
         </table>
     </div>
@@ -181,8 +271,8 @@
     }
 
     //임의로..
-    sliderWrapper[0].style.height = 500 +'px';
-    sliderContainer[0].style.height = 500 +'px';
+    sliderWrapper[0].style.height = 400 +'px';
+    sliderContainer[0].style.height = 400 +'px';
     
     //버튼 기능 업데이트 함수
     function updateNav(){
@@ -214,3 +304,5 @@
     //첫번째 슬라이드 먼저 보이도록 하기(prev버튼 없어야하기때문에)
     goToSlide(0);
 </script>
+
+{% endblock %}
