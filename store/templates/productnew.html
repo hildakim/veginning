@@ -1,0 +1,9 @@
+
+<div class="new">
+    <h1>Write your new blogpage</h1>
+    <form action="{% url 'productnew' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{new_form.as_p}}
+        <button type="submit">제출하기</button>
+    </form>
+</div>

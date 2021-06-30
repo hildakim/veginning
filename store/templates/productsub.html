@@ -1,0 +1,14 @@
+<span>{{psub.title}}</span>
+<div>
+    <br>
+    {{psub.writer}}
+    {{psub.pub_date}}
+    <hr size="5" color="black">
+    <br>
+    <div class="sub">
+        {% if psub.image %}
+        <p><img src="{{psub.image.url}}" alt="" width="500" height="200"></p>
+        {% endif %}
+        <p>{{psub.body}}</p>
+    </div>
+</div>
