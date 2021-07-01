@@ -53,33 +53,33 @@
 </style>
 
 <body>
-    <a href="{% url 'productdelete' psub.id %}">삭제하기</a>
-    <a href="{% url 'productedit' psub.id %}">수정하기</a>
+    <a href="{% url 'productdelete' csub.id %}">삭제하기</a>
+    <a href="{% url 'productedit' csub.id %}">수정하기</a>
     <br><br>
     <div>
         <table>
 
-            {% if psub.image %}
-            <img src="{{psub.image.url}}" alt="">
+            {% if csub.image %}
+            <img src="{{csub.image.url}}" alt="">
             {% endif %}
 
             <tbody class="sub3">
                 <tr>
                     <td class="sub2" colspan="2">
-                        <h1>{{psub.title}}</h1>
+                        <h1>{{csub.title}}</h1>
                     </td>
                 </tr>
                 <tr>
                     <th>업체</th>
-                    <td>{{psub.writer}}</td>
+                    <td>{{csub.writer}}</td>
                 </tr>
                 <tr>
                     <th>가격</th>
-                    <td class="a">{{psub.body}}</td>
+                    <td class="a">{{csub.body}}</td>
                 </tr>
                 <tr>
                     <th>설명</th>
-                    <td>{{psub.body2}}</td>
+                    <td>{{csub.body2}}</td>
                 </tr>
                 <tr>
                     <th>별점</th>
