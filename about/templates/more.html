@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'base.html' %}
+{% block content %}
     <style>
         body {
             text-align: center;
+            background-color: #D7F1FA;
         }
         #img {
             margin: 30px;
@@ -15,23 +11,26 @@
         .content {
             margin: 5% 20%;
             padding: 20px;
-            background-color: rgb(243, 243, 243);
+            background-color: #FFE6E6;
         }
         .detail {
             margin: 30px;
             padding: 50px;
-            background-color: rgba(189, 185, 185, 0.5);
+            background-color: rgba(166, 226, 148, 0.5);
+            border-radius: 25px;
+        }
+        .detail0 {
+            margin: 30px;
+            padding: 40px;
+            background-color: #FFC0CB;
         }
 
     </style>
-</head>
+
 <body>
-    {% load static %}
-    <img id="img" src="{% static 'logo2.png'%}" alt="logo" width="430">
-    <hr>
     <div class="content">
         
-        <div class="detail">
+        <div class="detail0">
         <p>채식주의자의 종류로는 8가지가 있습니다. <br>
             가장 프리한 단계인 플렉시 테리언 부터, 폴로  베지테리언, 
             페스코 베지테리언, 락토 오브 베지테리언, 오보 베지테리언,
@@ -102,3 +101,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

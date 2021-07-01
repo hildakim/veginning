@@ -1,12 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        text-align: center;
+        background-color: #D7F1FA;
+        font-family: "고딕" ;
+    }
+    .content {
+        margin: 3% 20%;
+        padding: 30px;
+        background-color: #FFDCDC;
+        border-radius: 25px;
+    }
+    #p {
+        padding: 50px;
+        margin: 10px  60px;
+        line-height: 40px;
+        background-color: #FAFAA0;
+        font-size: 15px;
+        border-radius: 25px;
+    }
+
+</style>
+
 <body>
-    bad
+    <div class="content">
+    <h3>단점은 뭐가 있을까?</h3>
+    <br>
+    <p id="p">단점으로는 영양소 결핍을 대표적으로 들 수 있습니다. 
+        채식만으로 충당할 수 없는 영양소에는 필수 아미노산, 
+        철분, 비타민, 칼슘, 아연 등이 있는데 특히 필수 아미노산은 인체 내에서 
+        생성되지 않기 때문에 음식을 통해서 섭취해줘야 합니다. 이 영양소들의 섭취가 부족하게 되면 빈혈, 
+        탈모가 생길 확률이 높아지게 되고, 피로감을 쉽게 느끼게 되므로 일상생활에 지장을 줄 수 있습니다. 
+        또, 골다공증, 골절이 생길 확률이 높아지게 되기 때문에 오히려 건강을 해치게 되며 각종 질병에 
+        노출될 확률이 높아지게 됩니다. 그러므로 결핍되는 영양소들은 견과류, 콩, 현미, 해조류 등으로 
+        다른 식품으로 대체 섭취해주는 게 좋습니다.
+    </p>
+    </div>
+
 </body>
 </html>
+{% endblock %}

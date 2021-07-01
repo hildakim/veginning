@@ -35,11 +35,6 @@
 <body>
     <div class="login">
     <form action="{% url 'login' %}" method="POST">
-        <!--{%csrf_token%}
-        {{form.as_p}}-->
-
-        {% load static %}
-        <img id="img" src="{% static 'logo2.png'%}" alt="logo" width="430">
         <br>
         <input name="username" id="input1" type="text" placeholder=" 아이디"/>
         <br>

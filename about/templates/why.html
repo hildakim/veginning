@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>why</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     <style>
         body {
             text-align: center;
+            background-color: #D7F1FA;
         }
         #img {
             margin: 30px;
@@ -17,21 +14,20 @@
         }
         .reason {
             margin: 30px;
-            background-color: rgb(243, 243, 243);
-            padding: 70px;
+            background-color: #FFE6E6;
+            padding: 50px;
+            border-radius: 25px;
         }
         p {
             margin: 20px;
             line-height: 40px;
+            padding: 40px;
         }
 
     </style>
-</head>
+
 <body>
-    {% load static %}
-    <img id="img" src="{% static 'logo2.png'%}" alt="logo" width="430">
-    <hr>
-    <div class="content">
+<div class="content">
     <div class="reason">
     <h1>첫번재 이유, 건강을 위해</h1>
     <img id="img" src="{% static 'health.jpg'%}" alt="health" width="500">
@@ -43,6 +39,7 @@
         비건식이 다 똑같은 비건식이 아닙니다. 비건 인구의 증가로 비건 정크푸드가 늘고 있습니다. 해외에는 비건식을 하면서 비만인 사람들도 많습니다. 식물성 비가공식품을 먹어야합니다. '설탕에 절인 고구마를 밀가루 입혀서 식용유에 튀겨 먹는다.' 이게 채식일까? 맞습니다.. 하지만 식단이 식물성이라는 사실보다, 어떤 채식을 하는지가 더 중요하다. 기본적으로 (1) 식물성, 그리고 (2) 비가공 식품을 드셔야 제대로 된 채식이 됩니다. 방금 예에서 설탕, 밀가루, 식용유 모두 가공 식품입니다. 
     </p>
     </div>
+
     <div class="reason">
     <h1>두번째 이유, 환경을 위해</h1>
     <img id="img" src="{% static 'nature.jpeg'%}" alt="health" width="500">
@@ -52,6 +49,7 @@
         <br><br>
         인간이 초래한 기후 변화의 51%가 축산업 때문이고 고기를 얻기 위해 가축을 기르며 쓰는 물이 세계 물 소비량의 30%이고 지구의 땅 45%를 축산업에 쓰고 아마존 파괴 이유의 91%가 축산업입니다. 매일 10억 명이 굶주리는데 인구가 기르는 곡식 50%는 동물 먹이로 사용되고 세계 기아의 80%가 축산업하는 나라에 살고 있습니다. 그런데 그런 나라에서는 정작 동물에게 식량이 돌아가는 꼴이라고 합니다. 요즘 시대는 전 인류가 모두 배불리 먹을 수 있는 시대. 식량을 동물 사료로 쓸 게 아니라 사람에게 써야 할 때. 우리가 육식을 줄인다면, 고기에게 먹여지는 유전자조작 콩을 만드는 밭을 전부 야생에 돌릴 수 있습니다. </p>
     </div>
+
     <div class="reason">
     <h1>세번째 이유, 동물권 보호를 위해</h1>
     <img id="img" src="{% static 'animal.jpg'%}" alt="health" width="500">
@@ -60,3 +58,4 @@
 </div>
 </body>
 </html>
+{% endblock %}
