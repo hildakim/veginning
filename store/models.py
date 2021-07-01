@@ -13,6 +13,9 @@ class Store(models.Model):
     def __str__(self):
         return self.title
 
+    def tsummary(self):
+        return self.title[:10]
+
     def summary(self):
         return self.body[:20]
         
@@ -27,6 +30,9 @@ class Store2(models.Model):
     def __str__(self):
         return self.title
 
+    def tsummary(self):
+        return self.title[:10]
+
     def summary(self):
         return self.body[:20]
 
@@ -40,6 +46,9 @@ class Store3(models.Model):
 
     def __str__(self):
         return self.title
+
+    def tsummary(self):
+        return self.title[:10]
 
     def summary(self):
         return self.body[:20]

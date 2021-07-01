@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,22 +99,6 @@
         <h3 class="hh">비건 생활 용품</h3>
         <span class="pp"><a href ="#">판매자추천순</a> | <a href ="#">인기도순</a> | <a href ="#">최신등록순</a> </span>
         <br>
-        <div>
-            <a href="{% url 'productnew' %}">Write</a>
-            {%if h_posts.has_previous %}
-            <a href="?h_page=1">first_page</a>
-            <a href="?h_page={{h_posts.previous_page_number}}">previous</a>
-            {% endif %}
-
-            <span>{{h_posts.number}}</span>
-            <span>of</span>
-            <span>{{h_posts.paginator.num_pages}}</span>
-
-            {% if h_posts.has_next %}
-            <a href="?h_page={{h_posts.next_page_number}}">Next</a>
-            <a href="?h_page={{h_posts.paginator.num_pages}}">Last</a>
-            {% endif %}
-        </div>
 
         <div>
             {% for h_obj in h_posts %}
@@ -122,7 +108,7 @@
                     <p><img src="{{h_obj.thumbnail.url}}"></p>
                 </li>
                 {% endif %}
-                <li class="a">{{h_obj.title}}</li>
+                <li class="a">{{h_obj.tsummary}}</li>
                 <li class="b">{{h_obj.writer}}</li>
                 <li class="c">{{h_obj.summary}}<a href="{% url 'householdsub' h_obj.id %}">...more</a></li>
             </ul>
@@ -151,3 +137,4 @@
     </div>
 </footer>
 </html>
+{% endblock %}

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 <html lang="en">
 
 <head>
@@ -86,6 +87,7 @@
     </style>
 </head>
 
+
 <section>
     <div class="box">
         <ul>
@@ -98,22 +100,6 @@
         <h3 class="hh">비건 식품</h3>
         <span class="pp"><a href="#">판매자추천순</a> | <a href="#">인기도순</a> | <a href="#">최신등록순</a> </span>
         <br>
-        <!-- <div>
-            <a href="{% url 'productnew' %}">Write</a>
-            {%if p_posts.has_previous %}
-            <a href="?p_page=1">first_page</a>
-            <a href="?p_page={{p_posts.previous_page_number}}">previous</a>
-            {% endif %}
-
-            <span>{{p_posts.number}}</span>
-            <span>of</span>
-            <span>{{p_posts.paginator.num_pages}}</span>
-
-            {% if p_posts.has_next %}
-            <a href="?p_page={{p_posts.next_page_number}}">Next</a>
-            <a href="?p_page={{p_posts.paginator.num_pages}}">Last</a>
-            {% endif %}
-        </div>  -->
 
         <div>
             {% for p_obj in p_posts %}
@@ -123,7 +109,7 @@
                     <p><img src="{{p_obj.thumbnail.url}}"></p>
                 </li>
                 {% endif %}
-                <li class="a">{{p_obj.title}}</li>
+                <li class="a">{{p_obj.tsummary}}</li>
                 <li class="b">{{p_obj.writer}}</li>
                 <li class="c">{{p_obj.summary}}<a href="{% url 'productsub' p_obj.id %}">...more</a></li>
             </ul>
@@ -153,3 +139,4 @@
 </footer>
 
 </html>
+{% endblock %}

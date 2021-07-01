@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <style>
     footer {
         margin-top: 100px;
@@ -28,12 +30,26 @@
         float: left;
     }
 
-    img {
+    .ii {
         width: 450px;
         height: 500px;
+    }
+
+    .dd {
+        margin-left: 200px;
+        margin-right: 50px;
+        width: 450px;
+        height: 500px;
+        border: 1px solid #e8e8e8;
         float: left;
-        padding-right: 50px;
-        padding-left: 200px;
+    }
+
+    .ii2 {
+        width: 65px;
+        height: 70px;
+        border: 1px solid #e8e8e8;
+        float: left;
+        margin-right:10px;
     }
 
     table{
@@ -50,15 +66,22 @@
         color:red;
         font-style: italic;
     }
+    ul {
+        list-style: none;
+        margin-left: 160px;
+    }
 </style>
 
 <body>
     <a href="{% url 'productedit' hsub.id %}">수정하기</a>
     <br><br>
     <div>
+        <br><br><br>
         <table>
             {% if hsub.image %}
-            <img src="{{hsub.image.url}}" alt="">
+            <div class="dd">
+            <img src="{{hsub.image.url}}" alt="" class="ii">
+            </div>
             {% endif %}
 
             <tbody class="sub3">
@@ -85,6 +108,10 @@
                 </tr>
             </tbody>
         </table>
+        <ul>
+            <li><img src="{{hsub.image.url}}" alt="" class="ii2"></li>
+            <li><img src="{{hsub.image.url}}" alt="" class="ii2"></li>
+        </ul>
     </div>
     <div class="clear"></div>
 </body>
@@ -105,3 +132,4 @@
         </ul>
     </div>
 </footer>
+{% endblock %}
