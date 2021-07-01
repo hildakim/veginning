@@ -1,12 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        body {
+            text-align: center;
+            background-color: #e1f9d5 ;
+        }
+        #input1 {
+            width: 400px;
+            height: 50px;
+            margin: 10px;
+        }
+        #submit {
+            width: 409px;
+            height: 50px;
+            margin: 10px;
+            background-color: green;
+            color: white;
+        }
+        #img {
+            margin: 40px;
+        }
+        .login {
+            margin: 30px;
+        }
+        #p {
+            color: gray;
+        }
+        #signup {
+            color: gray;
+            text-decoration:none
+        }
+    </style>
+
 <body>
-    
+    <div class="login">
+    <form action="{% url 'login' %}" method="POST">
+        <br>
+        <input name="username" id="input1" type="text" placeholder=" 아이디"/>
+        <br>
+        <input name="password" id="input1" type="password" placeholder=" 비밀번호"/>
+        <br>
+        <button id="submit" type="submit">로그인</button>
+        <br>
+        <p id="p">아이디 찾기 | 비밀번호 찾기 |
+        <a id="signup" href="{% url 'signup' %}">회원가입</a>
+        </p>
+    </form>
+    </div>
 </body>
 </html>
+
+{% endblock %}

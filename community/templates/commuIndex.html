@@ -5,8 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
+    <style>
+        .dropdown:hover .dropdown-menu {
+             display: block;
+             margin-top: 0;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Community
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">자유게시판</a>
+          <a class="dropdown-item" href="#">비건 레시피 공유해요</a>
+        </div>
+      </div>
+
+    <div class="container">
+        <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>채식하시는 분들 질문이요</td>
+                <td>입문자</td>
+                <td>2021.07.03</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>맛있는 비건 빵 추천해주세요</td>
+                <td>빵이최고</td>
+                <td>2021.07.01</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>비건 시작하려고 하는데 도와주세요.</td>
+                <td>입문자</td>
+                <td>2021.07.01</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>어떻게 비건을 시작하게 되셨나요?</td>
+                <td>입문자</td>
+                <td>2021.06.29</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>비건 꿀팁 나눠요 ^^</td>
+                <td>준우맘</td>
+                <td>2021.06.29</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <hr/>
+    <div align="right">
+      <button type="button" class="btn btn-outline-dark">글쓰기</button>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+    </nav>
+
 </body>
 </html>
