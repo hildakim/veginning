@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +29,9 @@
         </a>
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="./commuIndex.html">자유게시판</a>
-          <a class="dropdown-item" href="./restaurant.html">비건 식당 공유해요</a>
-          <a class="dropdown-item" href="./recipe.html">비건 레시피 공유해요</a>
+          <a class="dropdown-item" href="{% url 'free' %}">자유게시판</a>
+          <a class="dropdown-item" href="{% url 'restaurant' %}">비건 식당 공유해요</a>
+          <a class="dropdown-item" href="{% url 'recipe' %}">비건 레시피 공유해요</a>
         </div>
       </div>
 
@@ -98,3 +101,4 @@
 
 </body>
 </html>
+{% endblock %}
