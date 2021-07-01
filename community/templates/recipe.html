@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegan Recipe</title>
-</head>
     <style>
         body {
             text-align: center;
@@ -30,54 +28,56 @@
     </style>
 </head>
 <body>
+{% load static %}
+<br>
 <div class="position">
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep1.jpg" width="180" height="180">
+        <img id="img" src="{% static 'rep1.jpg' %}" width="180" height="180">
         <h3 class="color2">새송이버섯간장구이 만들기</h3>
-        <h4>익명</h4>
+        <h4>요리왕</h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep2.jpg" width="180" height="180">
+        <img id="img" src="{% static 'rep2.jpg' %}" width="180" height="180">
         <h3 class="color2">팽이버섯조림</h3>
         <h4>우우</h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep3.jpg" width="180" height="180">
+        <img id="img" src="{% static 'rep3.jpg' %}" width="180" height="180">
         <h3 class="color2">양배추 덮밥</h3>
         <h4>므므</h4>
     </div>
-
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep1.jpg" width="180" height="180">
-        <h3 class="color2">새송이버섯간장구이 만들기</h3>
+        <img id="img" src="{% static 'rep4.jpg' %}" width="180" height="180">
+        <h3 class="color2">맛있는 브로콜리야채볶음</h3>
         <h4>익명</h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep2.jpg" width="180" height="180">
-        <h3 class="color2">팽이버섯조림</h3>
-        <h4>우우</h4>
+        <img id="img" src="{% static 'rep5.jpg' %}" width="180" height="180">
+        <h3 class="color2">병아리콩 파스타</h3>
+        <h4>파스탐</h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep3.jpg" width="180" height="180">
-        <h3 class="color2">양배추 덮밥</h3>
-        <h4>므므</h4>
+        <img id="img" src="{% static 'rep6.jpg' %}" width="180" height="180">
+        <h3 class="color2">갈비없는 갈비찜 만들기</h3>
+        <h4>맛</h4>
     </div>
-
-     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep1.jpg" width="180" height="180">
-        <h3 class="color2">새송이버섯간장구이 만들기</h3>
+    <div style="float: left; width: 30%; padding:5px;">
+        <img id="img" src="{% static 'rep7.jpg' %}" width="180" height="180">
+        <h3 class="color2">비건을 위한 휘핑크림^^</h3>
+        <h4>준우맘</h4>
+    </div>
+    <div style="float: left; width: 30%; padding:5px;">
+        <img id="img" src="{% static 'rep8.jpg' %}" width="180" height="180">
+        <h3 class="color2">비건 부리또</h3>
         <h4>익명</h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep2.jpg" width="180" height="180">
-        <h3 class="color2">팽이버섯조림</h3>
-        <h4>우우</h4>
-    </div>
-    <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/rep3.jpg" width="180" height="180">
-        <h3 class="color2">양배추 덮밥</h3>
-        <h4>므므</h4>
+        <img id="img" src="{% static 'rep9.jpg' %}" width="180" height="180">
+        <h3 class="color2">비건 블루베리 와플 만들기</h3>
+        <h4>익명</h4>
     </div>
 </div>
+<div style="clear:both"></div>
 </body>
+</html>
 {% endblock %}
