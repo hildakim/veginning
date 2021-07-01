@@ -1,0 +1,170 @@
+    .main-store{
+        background-color: rgb(234, 247, 215);
+        padding: 20px;
+    }
+    .main-community {
+        background-color: white;
+        padding: 20px;
+    }
+    
+    .main-slider{
+        position:relative;
+        width:100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .slider-container{
+        position: absolute;
+        width:100%;
+        padding: 0;
+        margin: 0;
+    }   
+
+    .slide {
+        position: absolute;
+        width: 100%;
+        padding:0 10%;
+        box-sizing: border-box;
+        /* 슬라이더 안의 내용이 높이가 다르더라도 가운데에 맞출수 있게
+            top을 50%으로 하고 다시 자기크기의 반만큼 위로 올라오게 */
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        overflow: hidden;
+    }
+    .slider-container.animated {
+        -webkit-transition: left .3s ease-in;
+        transition: left .3s ease-in;
+    }
+
+    #prev, #next {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+        display: inline-block;
+        height: 3em;
+        width: 3em;
+        border-radius: 50%;
+    }
+    #prev.disabled, #next.disabled {
+        display: none;
+    }
+    #prev {
+        margin-left: -520px;
+        background-image: url("{% static 'left-arrow.svg' %}");
+    }
+    #next {
+        margin-left:480px;
+        background-image: url("{% static 'right-arrow.svg' %}");
+    }
+
+    .list_prd-best {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        padding-left: 0;
+        overflow:hidden;
+    }
+    .slide-img {
+        width : 100%;
+        overflow: hidden;
+    }
+    .prd-thumb {
+        overflow: hidden;
+    }
+    .prd-thumb img{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+    .prd-thumb img:hover{
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transition: .7s;
+    }
+    .wrap_prd-best-item{
+      padding: 5px;
+      background-color: white;
+    }
+    .box_community-best img {
+        width: 150px;
+    }
+    .slide {
+        width: 100%;
+        height: 400px;
+    }
+    .prd-best-item {
+        margin: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: 1px 1px 5px 6px rgba(179, 179, 179, 0.3);
+    }
+    .prd-best-item:hover {
+        box-shadow: 1px 1px 5px 8px rgba(138, 138, 138, 0.281);
+    }
+    .prd-info {
+        padding: 10px;
+        background-color: white;
+    }
+
+    .box_prd-best, .box_community-best {
+        margin-left: 130px;
+        margin-right: 130px;
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+    body {
+        margin: 0;
+    }
+    .slide {
+        background-color: white;
+    }
+    .box_prd-best, .box_community-best {
+        font-family: 'NanumSquare', sans-serif !important;
+    }
+    .table_best-post {
+        padding: 0px;
+        width: 100%;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 5px 6px rgba(179, 179, 179, 0.3);
+    }
+    .table_best-post:hover {
+        box-shadow: 1px 1px 5px 8px rgba(138, 138, 138, 0.281);
+    }
+    .best-post-thumb{
+        width:200px;
+        overflow: hidden; 
+    }
+    .table_best-post img{
+        width:200px;
+        height:130px;
+        object-fit: cover;
+    }
+    .best-post-body,  .best-post-title {
+        padding-left: 10px;
+    }
+    .best-post-title {
+        font-weight:bolder;
+    }
+    .best-post-body {
+        color: gray;
+    }
+    
+    h2 {
+        display: inline;
+    }
+    .more_link {
+        float: right;
+    }
+    .wrapper_table {
+        padding-top: 25px;
+        ;
+    }

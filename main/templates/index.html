@@ -3,167 +3,8 @@
 {% block content %}
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-<style>
-    section {
-        /* border: solid 1px black; */
-    }
-    .main-store{
-        /* display: inline; */
-        /* float: left; */
-        /* width: 49%; */
-        background-color: rgb(234, 247, 215);
-        padding: 20px;
-    }
-    .main-community {
-        /* display:inline; */
-        /* float: left; */
-        /* width: 50%; */
-        background-color: white;
-        padding: 20px;
-    }
-    
-    .main-slider{
-        position:relative;
-        width:100%;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-
-    .slider-container{
-        position: absolute;
-        width:100%;
-        padding: 0;
-        margin: 0;
-    }   
-
-    .slide {
-        position: absolute;
-        width: 100%;
-        padding:0 10%;
-        box-sizing: border-box;
-        /* 슬라이더 안의 내용이 높이가 다르더라도 가운데에 맞출수 있게
-            top을 50%으로 하고 다시 자기크기의 반만큼 위로 올라오게 */
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        overflow: hidden;
-    }
-    .slider-container.animated {
-        -webkit-transition: left .3s ease-in;
-        transition: left .3s ease-in;
-    }
-
-    #prev, #next {
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%);
-        z-index: 9999;
-        display: inline-block;
-        height: 3em;
-        width: 3em;
-        border-radius: 50%;
-    }
-    #prev.disabled, #next.disabled {
-        display: none;
-    }
-    #prev {
-        margin-left: -520px;
-        background-image: url("{% static 'left-arrow.svg' %}");
-    }
-    #next {
-        margin-left:480px;
-        background-image: url("{% static 'right-arrow.svg' %}");
-    }
-
-    .list_prd-best {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        list-style-type: none;
-        padding-left: 0;
-        width: 1000px;
-        margin:50 auto;
-    }
-    table, tr, td{
-        border: solid 1px black;
-    }
-    .slide-img {
-        width : 100%;
-        overflow: hidden;
-    }
-    .prd-thumb {
-        overflow: hidden;
-    }
-    .prd-thumb img{
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-    }
-    .prd-thumb img:hover{
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transition: .7s;
-    }
-    .wrap_prd-best-item{
-      padding: 5px;
-      background-color: white;
-    }
-    .list_prd-best{
-        /* border: 1px solid black; */
-    }
-    .box_community-best img {
-        width: 150px;
-    }
-    .slide {
-        width: 100%;
-        height: 400px;
-    }
-    .prd-best-item {
-        margin: 5px;
-        margin-left: 20px;
-        margin-right: 20px;
-        box-shadow: 1px 1px 5px 6px rgba(179, 179, 179, 0.3);
-    }
-    .prd-best-item:hover {
-        box-shadow: 1px 1px 5px 8px rgba(138, 138, 138, 0.281);
-    }
-    .prd-info {
-        padding: 10px;
-        background-color: white;
-    }
-    /* .box_prd-best {
-        margin: 0 auto;
-    } */
-    /* .list_prd-best{
-        margin: 0 auto;
-    } */
-
-    .box_prd-best, .box_community-best {
-        margin-left: 130px;
-        margin-right: 130px;
-        margin-top: 50px;
-        margin-bottom: 80px;
-    }
-    body {
-        /* background-color: antiquewhite; */
-    }
-    .slide {
-        background-color: white;
-    }
-    .box_prd-best, .box_community-best {
-        font-family: 'NanumSquare', sans-serif !important;
-    }
-    
-</style>
-
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-
 
 <section class="main-slider">
     <ul class="slider-container">
@@ -185,6 +26,7 @@
 <section class="main-store">
     <div class="box_prd-best">
         <h2>인기 상품</h2>
+        <a class="more_link">더보기</a>
         <ul class="list_prd-best">
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
@@ -206,8 +48,8 @@
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
-                    <div class="prd-thumb"><img src="{% static 'activia.jpg' %}"></div>
-                    <div class="prd-info"><span>식물성 액티비아</span><br><p>4000원</p></div>
+                    <div class="prd-thumb"><img src="{% static 'zeromeat.jpg' %}"></div>
+                    <div class="prd-info"><span>비건 한입까스</span><br><p>4000원</p></div>
                 </div>
             </li>
             
@@ -219,90 +61,35 @@
 <section class="main-community">
     <div class="box_community-best">
         <h2>커뮤니티 인기글</h2>
-        <table>
-            <tr>
-                <td rowspan="2"><img src="{% static 'activia.jpg' %}"></td>
-                <td>연남동 비건 식당 후기</td>
-            </tr>
-            <tr>
-                <td>어제 어디어디에 있다는 어디 비건식당을 갔음. 가격은 이정도고 동물성 원료는 ...</td>
-            </tr>
-        </table>
+        <a class="more_link">더보기</a>
+        <div class="wrapper_table">
+            <table class="table_best-post">
+                <tr>
+                    <td rowspan="2" class="best-post-thumb"><img src="{% static 'vegan-food.jpg' %}"></td>
+                    <td class="best-post-title">연남동 비건 식당 후기</td>
+                </tr>
+                <tr>
+                    <td class="best-post-body">어제 어디어디에 있다는 어디 비건식당을 갔음. 가격은 이정도고 동물성 원료는 ...</td>
+                </tr>
+            </table>
+            <table class="table_best-post">
+                <tr>
+                    <td rowspan="2" class="best-post-thumb"><img src="{% static 'activia.jpg' %}"></td>
+                    <td class="best-post-title">연남동 비건 식당 후기</td>
+                </tr>
+                <tr>
+                    <td class="best-post-body">어제 어디어디에 있다는 어디 비건식당을 갔음. 가격은 이정도고 동물성 원료는 ...</td>
+                </tr>
+            </table>
+        </div>
+        
     </div>
+
+    <script type="text/javascript" src="{%static 'js/index.js'%}" ></script>
+    <script>
+        calculateTallestSlides();
+        goToSlide(0);
+    </script>
 </section>
-
-
-<script>
-    //변수
-    var sliderWrapper = document.getElementsByClassName("main-slider"),
-        sliderContainer = document.getElementsByClassName('slider-container'),
-        slides = document.getElementsByClassName('slide'),
-        slideCount = slides.length, //슬라이드 개수
-        currentIndex = 0, //현재 몇번째 슬라이드?
-        topHeight = 0, //자식요소들 중 가장 높이가 큰 거 구할때 쓸것
-        navPrev = document.getElementById('prev'),
-        navNext = document.getElementById('next');
-
-    //슬라이드의 높이 확인하여 부모의 높이로 지정
-    function calculateTallestSlides(){
-        for(var i = 0; i < slideCount; i++){
-            if(slides[i].offsetHeight > topHeight){
-                topHeight = slides[i].offsetHeight;
-            }
-        }
-        sliderWrapper[0].style.height = topHeight +'px';
-        sliderContainer[0].style.height = topHeight +'px';
-    }
-
-    calculateTallestSlides();
-    
-    //슬라이드 가로 배열하기
-    for(var i = 0; i < slideCount; i++){
-        slides[i].style.left = i*100 + '%'; 
-    }
-    
-    //슬라이드 이동 함수
-    function goToSlide(idx){
-        sliderContainer[0].style.left = idx * -100 + '%';
-        sliderContainer[0].classList.add('animated');
-        currentIndex = idx;
-
-        updateNav();
-    }
-
-    //임의로..
-    sliderWrapper[0].style.height = 400 +'px';
-    sliderContainer[0].style.height = 400 +'px';
-    
-    //버튼 기능 업데이트 함수
-    function updateNav(){
-        //슬라이드 처음일때
-        if(currentIndex == 0){
-            navPrev.classList.add('disabled');
-        } else{
-            navPrev.classList.remove('disabled');
-        }
-        //슬라이드 끝일때
-        if(currentIndex == slideCount-1){
-            navNext.classList.add('disabled');
-        } else {
-            navNext.classList.remove('disabled');
-        }
-    }
-
-
-    //버튼을 클릭하면 슬라이드 이동
-    navPrev.addEventListener('click', function(event){
-        event.preventDefault(0); //a의 기본 기능 막기
-        goToSlide(currentIndex - 1);
-    });
-    navNext.addEventListener('click', function(evevt){
-        event.preventDefault(0); 
-        goToSlide(currentIndex + 1);
-    });
-
-    //첫번째 슬라이드 먼저 보이도록 하기(prev버튼 없어야하기때문에)
-    goToSlide(0);
-</script>
 
 {% endblock %}
