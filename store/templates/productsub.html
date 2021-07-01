@@ -1,66 +1,94 @@
-<style>
-    footer {
-        margin-top: 100px;
-        border-top: solid 1px #dddddd;
-    }
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
 
-    #footer_menu li {
-        display: inline;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        footer {
+            margin-top: 100px;
+            border-top: solid 1px #dddddd;
+        }
 
-    #footer_menu {
-        padding-top: 30px;
-    }
+        #footer_menu li {
+            display: inline;
+        }
 
-    .footers {
-        float: left;
-    }
-    .clear {
-        clear: both;
-    }
+        #footer_menu {
+            padding-top: 30px;
+        }
 
-    .sub2 {
-        text-align: center;
-        border-bottom: 2px solid black;
-    }
+        .footers {
+            float: left;
+        }
 
-    .sub3 {
-        float: left;
-    }
+        .clear {
+            clear: both;
+        }
 
-    img {
-        width: 450px;
-        height: 500px;
-        float: left;
-        padding-right: 50px;
-        padding-left: 200px;
-    }
+        .sub2 {
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
 
-    table{
-        width:800px;
-        height: 200px;
-    }
-    th{
-        text-align: left;
-        width:200px;
-        color:gray;
-        height: 100px;
-    }
-    .a{
-        color:red;
-        font-style: italic;
-    }
-</style>
+        .sub3 {
+            float: left;
+        }
 
-<body>
-    <a href="{% url 'productdelete' psub.id %}">삭제하기</a>
-    <a href="{% url 'productedit' psub.id %}">수정하기</a>
-    <br><br>
+        .ii{
+            width:450px;
+            height:500px;
+        }
+        .dd{
+            margin-left: 200px;
+            margin-right: 50px;
+            width:450px;
+            height:500px;
+            border:1px solid #e8e8e8;
+            float: left;
+        }
+        .ii2{
+            width:65px;
+            height:70px;
+            border:1px solid #e8e8e8;
+            float: left;
+            margin-right:10px;
+        }
+
+        table {
+            width: 800px;
+            height: 200px;
+        }
+
+        th {
+            text-align: left;
+            width: 200px;
+            color: gray;
+            height: 100px;
+        }
+
+        .a {
+            color: red;
+            font-style: italic;
+        }
+        ul {
+            list-style: none;
+            margin-left: 160px;
+        }
+    </style>
+</head>
+
+<section>
     <div>
         <table>
+            <br><br><br>
 
             {% if psub.image %}
-            <img src="{{psub.image.url}}" alt="">
+            <div class="dd">
+            <img src="{{psub.image.url}}" alt="" class="ii">
+            </div>
             {% endif %}
 
             <tbody class="sub3">
@@ -87,9 +115,13 @@
                 </tr>
             </tbody>
         </table>
+        <ul>
+            <li><img src="{{psub.image.url}}" alt="" class="ii2"></li>
+            <li><img src="{{psub.image.url}}" alt="" class="ii2"></li>
+        </ul>
     </div>
     <div class="clear"></div>
-</body>
+</section>
 <footer>
     <div class="footers">
         <ul>
@@ -107,3 +139,6 @@
         </ul>
     </div>
 </footer>
+
+</html>
+{% endblock %}
