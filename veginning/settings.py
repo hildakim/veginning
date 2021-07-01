@@ -59,7 +59,8 @@ ROOT_URLCONF = 'veginning.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'veginning/templates')],
+
+        'DIRS': ['veginning/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
