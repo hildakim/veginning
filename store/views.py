@@ -58,17 +58,17 @@ def productnew(request):
         return render(request, 'productnew.html', {'new_form':new_form})
 
 def productedit(request, id):
-    pedit= get_object_or_404(Store3, pk = id)
+    pedit= get_object_or_404(Store, pk = id)
     if request.method == 'GET':
-        p_form = StoreForm3(instance = pedit)
+        p_form = StoreForm(instance = pedit)
         return render(request, 'productedit.html', {'p_edit':p_form})
     else:
-        p_form = StoreForm3(request.POST, request.FILES, instance = pedit)
+        p_form = StoreForm(request.POST, request.FILES, instance = pedit)
         if p_form.is_valid():
             pedit = p_form.save(commit = False)
             pedit.pub_date = timezone.now()
             pedit.save()
-        return redirect('household')
+        return redirect('product')
 
 def productdelete(request, id):
     pdelete = Store.objects.get(id = id)
