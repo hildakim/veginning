@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
 <head>
     <meta charset="UTF-8">
@@ -23,66 +22,72 @@
         .color2{
             color:darkgreen;
         }
+        .gray{
+            color:gray;
+        }
     </style>
 </head>
 <body>
+{% load static %}
+<br>
 <div class="position">
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res1.png" width="180" height="180">
-        <h2 class="color1">5.0</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>카레</h4>
+        <img id="img" src="{% static 'res1.jpg' %}" width="180" height="180">
+        <h3 class="color2">베제투스</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 해방촌 | 비건 레스토랑 </h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res2.jpg" width="180" height="180">
-        <h2 class="color1">4.6</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>버섯 꿔바로우, 가지구이</h4>
+        <img id="img" src="{% static 'res2.jpg' %}" width="180" height="180">
+        <h3 class="color2">어라운드 그린</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 망원동 | 비건 양식 </h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res3.jpg" width="180" height="180">
-        <h2 class="color1">4.4</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>샐러드</h4>
-    </div>
-
-    <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res1.png" width="180" height="180">
-        <h2 class="color1">5.0</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>카레</h4>
-    </div>
-    <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res2.jpg" width="180" height="180">
-        <h2 class="color1">4.6</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>버섯 꿔바로우, 가지구이</h4>
-    </div>
-    <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res3.jpg" width="180" height="180">
-        <h2 class="color1">4.4</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>샐러드</h4>
+        <img id="img" src="{% static 'res3.jpg' %}" width="180" height="180">
+        <h3 class="color2">플랜트</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 이태원 | 샐러드,버거 등 </h4>
     </div>
 
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res1.png" width="180" height="180">
-        <h2 class="color1">5.0</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>카레</h4>
+        <img id="img" src="{% static 'res4.jpg' %}" width="180" height="180">
+        <h3 class="color2">발우공양</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 인사동 | 정통 사찰 음식 전문점 </h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res2.jpg" width="180" height="180">
-        <h2 class="color1">4.6</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>버섯 꿔바로우, 가지구이</h4>
+        <img id="img" src="{% static 'res5.jpg' %}" width="180" height="180">
+        <h3 class="color2">몽크스부처</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 이태원 | 비건 레스토랑 </h4>
     </div>
     <div style="float: left; width: 30%; padding:5px;">
-        <img id="img" src="../static/res3.jpg" width="180" height="180">
-        <h2 class="color1">4.4</h2>
-        <h2 class="color2">비건식당</h2>
-        <h4>샐러드</h4>
+        <img id="img" src="{% static 'res6.jpg' %}" width="180" height="180">
+        <h3 class="color2">칙피스</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 신사동 | 비건 레스토랑 </h4>
+    </div>
+
+    <div style="float: left; width: 30%; padding:5px;">
+        <img id="img" src="{% static 'res7.jpg' %}" width="180" height="180">
+        <h3 class="color2">로컬릿</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 옥수동 | 비건 이탈리안 음식점 </h4>
+    </div>
+    <div style="float: left; width: 30%; padding:5px;">
+        <img id="img" src="{% static 'res8.jpg' %}" width="180" height="180">
+        <h3 class="color2">이세계는 놀이터예요</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 이화여대앞 | 비건 퓨전 한식 </h4>
+    </div>
+    <div style="float: left; width: 30%; padding:5px;">
+        <img id="img" src="{% static 'res9.jpg' %}" width="180" height="180">
+        <h3 class="color2">빵어니스타</h3>
+        <h3 class="color1">★★★★</h3>
+        <h4 class="gray"> 연남동 | 비건 빵집 </h4>
     </div>
 </div>
+<div style="clear:both"></div>
 </body>
 {% endblock %}
