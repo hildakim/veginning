@@ -1,21 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'base.html' %}
+{% block content %}
     <style>
         body {
             text-align: center;
+            background-color: #D7F1FA;
         }
-    </style>
-</head>
-<body>
-    <h1>비건 입문자들을 위한 입문서</h1>
-    <form>
-        <button id="button" type="button">로그인</button><br>
+        #img {
+            margin: 30px;
+        }
+        .button {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            padding: 15px 0;
+            color:#fff;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "고딕" ;
+            border-radius: 300px;
+            display : inline-block;
+        }
+        #button1 {
+            background-color: #AAEBAA;
+        }
+        #button2 {
+            background-color: #FFAAAA;
+        }
+        #button3 {
+            background-color: #B4C3FF;
+        }
+        .content {
+            margin: 50px;
+        }
 
+    </style>
+
+<body>
+    <div class="content">
+    <form>
+        <button class="button" id="button1" type="button" onClick="location.href='{% url 'why' %}'">채식을 하는 이유?</button>    
+        <button class="button" id="button2" type="button" onclick="location.href='{% url 'more' %}'">비건이란? <br> 채식주의자의 종류</button>
+        <button class="button" id="button3" type="button" onclick="location.href='{% url 'bad' %}'">단점?</button>
+        <br>
     </form>
+    </div>
 </body>
 </html>
+{% endblock %}
