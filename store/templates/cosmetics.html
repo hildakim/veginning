@@ -67,7 +67,6 @@
         .clear {
             clear: both;
         }
-
         .box {
             margin: 0 auto;
             border-top: 1px solid #ddddddda;
@@ -95,37 +94,37 @@
         </ul>
     </div>
     <div>
-        <h3 class="hh">비건 식품</h3>
-        <span class="pp"><a href="#">판매자추천순</a> | <a href="#">인기도순</a> | <a href="#">최신등록순</a> </span>
+        <h3 class="hh">비건 화장품</h3>
+        <span class="pp"><a href ="#">판매자추천순</a> | <a href ="#">인기도순</a> | <a href ="#">최신등록순</a> </span>
         <br>
-        <!-- <div>
+        <div>
             <a href="{% url 'productnew' %}">Write</a>
-            {%if p_posts.has_previous %}
-            <a href="?p_page=1">first_page</a>
-            <a href="?p_page={{p_posts.previous_page_number}}">previous</a>
+            {%if c_posts.has_previous %}
+            <a href="?c_page=1">first_page</a>
+            <a href="?c_page={{c_posts.previous_page_number}}">previous</a>
             {% endif %}
 
-            <span>{{p_posts.number}}</span>
+            <span>{{c_posts.number}}</span>
             <span>of</span>
-            <span>{{p_posts.paginator.num_pages}}</span>
+            <span>{{c_posts.paginator.num_pages}}</span>
 
-            {% if p_posts.has_next %}
-            <a href="?p_page={{p_posts.next_page_number}}">Next</a>
-            <a href="?p_page={{p_posts.paginator.num_pages}}">Last</a>
+            {% if c_posts.has_next %}
+            <a href="?c_page={{c_posts.next_page_number}}">Next</a>
+            <a href="?c_page={{c_posts.paginator.num_pages}}">Last</a>
             {% endif %}
-        </div>  -->
+        </div>
 
         <div>
-            {% for p_obj in p_posts %}
+            {% for c_obj in c_posts %}
             <ul class="items">
-                {% if p_obj.image %}
+                {% if c_obj.image %}
                 <li>
-                    <p><img src="{{p_obj.thumbnail.url}}"></p>
+                    <p><img src="{{c_obj.thumbnail.url}}"></p>
                 </li>
                 {% endif %}
-                <li class="a">{{p_obj.title}}</li>
-                <li class="b">{{p_obj.writer}}</li>
-                <li class="c">{{p_obj.summary}}<a href="{% url 'productsub' p_obj.id %}">...more</a></li>
+                <li class="a">{{c_obj.title}}</li>
+                <li class="b">{{c_obj.writer}}</li>
+                <li class="c">{{c_obj.summary}}<a href="{% url 'cosmeticssub' c_obj.id %}">...more</a></li>
             </ul>
             {% endfor %}
             <br><br>
@@ -151,5 +150,4 @@
         </ul>
     </div>
 </footer>
-
 </html>
