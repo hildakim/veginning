@@ -37,24 +37,26 @@
             float: left;
         }
 
-        .ii{
-            width:450px;
-            height:500px;
+        .ii {
+            width: 450px;
+            height: 500px;
         }
-        .dd{
-            margin-left: 200px;
+
+        .dd {
+            margin-left: 150px;
             margin-right: 50px;
-            width:450px;
-            height:500px;
-            border:1px solid #e8e8e8;
+            width: 450px;
+            height: 500px;
+            border: 1px solid #e8e8e8;
             float: left;
         }
-        .ii2{
-            width:65px;
-            height:70px;
-            border:1px solid #e8e8e8;
+
+        .ii2 {
+            width: 65px;
+            height: 70px;
+            border: 1px solid #e8e8e8;
             float: left;
-            margin-right:10px;
+            margin-right: 10px;
         }
 
         table {
@@ -62,20 +64,51 @@
             height: 200px;
         }
 
-        th {
+        .h {
             text-align: left;
             width: 200px;
             color: gray;
-            height: 100px;
+            height: 80px;
         }
 
         .a {
             color: red;
             font-style: italic;
         }
+
         ul {
             list-style: none;
-            margin-left: 160px;
+            margin-left: 110px;
+        }
+
+        .t2 {
+            float: right;
+            margin-right: 68px;
+            text-align: left;
+            border-top: 1px solid black;
+        }
+
+        .tt {
+            color: gray;
+        }
+
+        .b {
+            background-color: #dddddd;
+            font-weight: bold;
+            font-size: larger;
+            color: gray;
+            border-bottom: 2px solid black;
+        }
+
+        .g {
+            color: rgb(92, 92, 224);
+        }
+
+        .bt {
+            width: 200px;
+            font-size: medium;
+            background-color: gray;
+            color: white;
         }
     </style>
 </head>
@@ -84,42 +117,101 @@
     <div>
         <table>
             <br><br><br>
-
             {% if psub.image %}
             <div class="dd">
-            <img src="{{psub.image.url}}" alt="" class="ii">
+                <img src="{{psub.image.url}}" alt="" class="ii">
             </div>
             {% endif %}
-
+                
             <tbody class="sub3">
+                <h1>{{psub.title}}</h1>
+                <span style="color:red; font-size: x-large; float:left; font-weight: bold;" >최저 8,415원&emsp;&emsp;&nbsp;</span>
+                <button class="bt">최저가 사러가기</button>
+                <hr>
                 <tr>
-                    <td class="sub2" colspan="2">
-                        <h1>{{psub.title}}</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <th>업체</th>
+                    <th class="h">업체</th>
                     <td>{{psub.writer}}</td>
                 </tr>
                 <tr>
-                    <th>가격</th>
+                    <th class="h">가격</th>
                     <td class="a">{{psub.body}}</td>
                 </tr>
                 <tr>
-                    <th>설명</th>
+                    <th class="h">설명</th>
                     <td>{{psub.body2}}</td>
                 </tr>
                 <tr>
-                    <th>별점</th>
+                    <th class="h">별점</th>
                     <td>4.7점/5점</td>
                 </tr>
             </tbody>
         </table>
+        <br><br><br>
         <ul>
             <li><img src="{{psub.image.url}}" alt="" class="ii2"></li>
             <li><img src="{{psub.image.url}}" alt="" class="ii2"></li>
         </ul>
+        <br>
+        <table class="t2">
+            <tr>
+                <td colspan="4">
+                    <h2>판매처별 최저가</h2>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="b">판매처</span></td>
+                <td><span class="b">판매가</span></td>
+                <td><span class="b">배송비</span></td>
+                <td><span class="b">사러가기</span></td>
+            </tr>
+
+            <tr>
+                <th class="g">29CM</th>
+                <td class="a">최저 8415원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">롯데 ON</th>
+                <td>9400원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">TMON</th>
+                <td>9620원</td>
+                <td class="tt">3000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">INTERPARK</th>
+                <td>9730원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">G-market</th>
+                <td>9780원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">옥션</th>
+                <td>9780원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+            <tr>
+                <th class="g">롯데 홈쇼핑</th>
+                <td>9830원</td>
+                <td class="tt">4000원</td>
+                <td><button class="tt">사러가기</button></td>
+            </tr>
+
+        </table>
     </div>
+
+
     <div class="clear"></div>
 </section>
 
