@@ -1,33 +1,45 @@
 <style>
-    .sub {
+    footer {
+        margin-top: 100px;
+        border-top: solid 1px #dddddd;
+    }
+
+    #footer_menu li {
+        display: inline;
+    }
+
+    #footer_menu {
+        padding-top: 30px;
+    }
+
+    .footers {
         float: left;
-        padding-right: 40px;
-        padding-left:20px;
     }
-    .sub2{
+
+    .sub2 {
         text-align: center;
-        border-bottom:2px solid black;
-    }
-    .sub3{
-        float:left;
-    }
-    ul {
-        list-style: none;
-        text-align: left;
+        border-bottom: 2px solid black;
     }
 
-    .a {
-        color: black;
-        margin-top: 35px;
+    .sub3 {
+        float: left;
     }
 
-    .b {
-        color: black;
-        margin-top: 8px;
+    img {
+        width: 450px;
+        height: 500px;
+        float: left;
+        padding-right: 50px;
+        padding-left: 20px;
     }
 
-    .c {
-        font-weight: bold;
+    table,
+    th,
+    td,tr {
+        border: 1px solid black;
+        width: 300px;
+        height: 100px;
+
     }
 </style>
 
@@ -37,11 +49,11 @@
     <br><br>
     <div>
         <table>
-            <div class="sub">
-                {% if psub.image %}
-                <p><img src="{{psub.image.url}}" alt="" width="450" height="500"></p>
-                {% endif %}
-            </div>
+
+            {% if psub.image %}
+            <img src="{{psub.image.url}}" alt="">
+            {% endif %}
+
             <tbody class="sub3">
                 <tr>
                     <td class="sub2" colspan="2">
@@ -64,3 +76,20 @@
         </table>
     </div>
 </body>
+<footer>
+    <div class="footers">
+        <ul>
+            <h3>Veginning(주)</h3>
+            <li>사업자 등록번호 1234</li>
+            <li>대표이사 해리포터 | 호그와트 12345</li>
+            <li>전화 1234-56789</li>
+        </ul>
+    </div>
+    <div class="footers">
+        <ul>
+            <h3>고객센터</h3>
+            <li>1:1 문의 바로가기</li>
+            <li>전자금융거래 분쟁처리</li>
+        </ul>
+    </div>
+</footer>
