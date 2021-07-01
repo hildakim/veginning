@@ -8,14 +8,47 @@
     <style>
         body {
             text-align: center;
+            background-color: #D7F1FA;
         }
+        #img {
+            margin: 30px;
+        }
+        .button {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            padding: 15px 0;
+            color:#fff;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 300px;
+            display : inline-block;
+            font-family: "고딕" ;
+        }
+        #button1 {
+            background-color: #AAEBAA;
+        }
+        #button2 {
+            background-color: #FFAAAA;
+        }
+        #button3 {
+            background-color: #B4C3FF;
+        }
+
     </style>
 </head>
 <body>
-    <h1>비건 입문자들을 위한 입문서</h1>
+    {% load static %}
+    <img id="img" src="{% static 'logo2.png'%}" alt="logo" width="430">
+        
     <form>
-        <button id="button" type="button">로그인</button><br>
-
+        <button class="button" id="button1" type="button" onClick="location.href='{% url 'why' %}'">채식을 하는 이유?</button>    
+        <button class="button" id="button2" type="button" onclick="location.href='{% url 'more' %}'">비건이란? <br> 채식주의자의 종류</button>
+        <button class="button" id="button3" type="button" onclick="location.href='{% url 'bad' %}'">단점?</button>
+        <br>
     </form>
 </body>
 </html>

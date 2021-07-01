@@ -31,23 +31,30 @@
         #p {
             color: gray;
         }
+        #signup {
+            color: gray;
+            text-decoration:none
+        }
     </style>
 </head>
 <body>
     <div class="login">
-    <form action="" method="post">
+    <form action="{% url 'login' %}" method="POST">
         <!--{%csrf_token%}
         {{form.as_p}}-->
 
         {% load static %}
-        <img id="img" src="{% static 'logo.PNG'%}" alt="logo" width="430">
+        <img id="img" src="{% static 'logo2.png'%}" alt="logo" width="430">
         <br>
-        <input id="input1" type="text" value=" 아이디"/><br>
-        <input id="input1" type="text" value=" 비밀번호"/><br>
-
-        <button id="submit" type="submit">로그인</button><br>
-            
-        <p id="p">아이디 찾기 | 비밀번호 찾기 | 회원가입</p>
+        <input name="username" id="input1" type="text" placeholder=" 아이디"/>
+        <br>
+        <input name="password" id="input1" type="password" placeholder=" 비밀번호"/>
+        <br>
+        <button id="submit" type="submit">로그인</button>
+        <br>
+        <p id="p">아이디 찾기 | 비밀번호 찾기 |
+        <a id="signup" href="{% url 'signup' %}">회원가입</a>
+        </p>
     </form>
     </div>
 </body>
