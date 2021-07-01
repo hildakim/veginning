@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Saira:wght@400;600&Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
   <style>
-    /* .nav-container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      border: solid 1px black;
-    } */
-   
+    header {
+      text-align: center;
+      background-color: rgb(234, 247, 215);
+    }
+    #veginning-logo{
+      width: 20%;
+      margin:10px;
+    }
     nav {
-      border: solid 1px black;
+      background-color: darkseagreen;
     }
     .nav-item {
-      padding: 5px;
+      padding: 15px;
       padding-right: 15px;
       margin: 3px;
+      font-weight: bolder;
     }
     .nav-item a{
       text-align: center;
       text-decoration: none;
-      /* font-family: 'Freckle Face', cursive; */
-      font-size: 20px;
-    }
-    header {
-      text-align: center;
-      border: solid 1px black;
+      font-family: 'NanumSquare', sans-serif !important;
     }
     .box_service-menu, .box_user-menu{
       display: inline-block;
@@ -39,38 +36,58 @@
     }
     .service-menu, .user-menu{
       list-style-type: none;
+      margin: 0;
     }
     .service-menu{
-      border:solid 1px black;
       display: flex;
       justify-content: space-around;
-      width:50vw;;
+      width:50vw;
     }
     .user-menu{
-      border:solid 1px black;
       display: flex;
       justify-content: center;
       width: 30vw;
+    }
+    .container {
+      display: block;
+    }
+    footer {
+      /* width: 100%; */
+      height:100px;
+      background-color: darkseagreen;
+      margin: 0;
+      padding: 30px;
+      font-family: 'NanumSquare', sans-serif !important;
+    }
+    #wrapper{
+      min-height:100%;
+      margin: 0px;
+      margin-bottom: 200px;
+    }
+    body{
+      margin: 0;
     }
   </style>
 </head>
 <body>
   {% load static %}
   <header>
-    <a>veginning</a>
+    <a href="{% url 'home' %}">
+      <img src="{% static 'veginning-logo1.png' %}" id="veginning-logo">
+    </a>
   </header>
 
   <nav>
     <div class="box_service-menu">
       <ul class="service-menu">
         <li class="nav-item">
-          <a>ABOUT</a>
+          ABOUT
         </li>
         <li class="nav-item">
-          <a>STORE</a>
+          스토어
         </li>
         <li class="nav-item">
-          <a>COMMUNITY</a>
+          커뮤니티
         </li>
       </ul>
     </div>
@@ -78,25 +95,26 @@
     <div class="box_user-menu">
       <ul class="user-menu">
         <li class="nav-item">
-          <a>sign in</a>
+          로그인
         </li>
         <li class="nav-item">
-          <a>sign up</a>
+          회원가입
         </li>
       </ul>
     </div>
    
   </nav>
 
-  <div class="container">
-    {% block content %}
-    {% endblock %}
+  <div id="wrapper">
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
-
+    
   <footer>
     <div class="developer-info">
-      <span>멋사 아이디어톤 veginning팀</span>a
-      <p>email: ~~</p>
+      멋사 아이디어톤 veginning팀
     </div>
   </footer>
 </body>
