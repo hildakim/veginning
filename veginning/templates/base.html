@@ -27,6 +27,7 @@
       text-align: center;
       text-decoration: none;
       font-family: 'NanumSquare', sans-serif !important;
+      color: black;
     }
     .box_service-menu, .box_user-menu{
       display: inline-block;
@@ -81,13 +82,13 @@
     <div class="box_service-menu">
       <ul class="service-menu">
         <li class="nav-item">
-          ABOUT
+          <a href="{% url 'forstarter' %}">ABOUT</a>
         </li>
         <li class="nav-item">
-          스토어
+          <a href="{% url 'product' %}">스토어</a>
         </li>
         <li class="nav-item">
-          커뮤니티
+          <a>커뮤니티</a>
         </li>
       </ul>
     </div>
@@ -95,10 +96,10 @@
     <div class="box_user-menu">
       <ul class="user-menu">
         <li class="nav-item">
-          로그인
+          <a href="{% url 'login' %}">로그인</a>
         </li>
         <li class="nav-item">
-          회원가입
+          <a>회원가입</a>
         </li>
       </ul>
     </div>
