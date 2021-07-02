@@ -1,25 +1,63 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    body {
+        background-color: #e1f9d5 ;
+    }
 
+    .content {
+        text-align: center;
+        margin: 2% 40%;
+    }
+
+    .content2 {
+        text-align: left;
+        margin: auto 10px;
+        font-weight: bold;
+    }
+
+    #input {
+        width: 300px;
+        height: 40px;
+        margin: 10px 0px;
+        border-color: #abd0bc;
+        border-style: solid;
+        border-width: thin;
+    }
+
+    #submit {
+        width: 309px;
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #86b086;
+        color: white;
+        border-style: none;
+    }
+
+</style>
 <body>
-    <h1>Sign up!</h1>
-    <form method= "POST" action ="{% url 'signup' %}">
-        {% csrf_token %} <!--보안을 위해서 써주는 난수 발생기, csrf 방해를 방어해주는 것.-->
-        Username:
-        <br>
-        <input name="username" type = "text" value="">
-        <br>
-        Password:
-        <br>
-        <input name="password1" type = "password" value="">
-        <br>
-        Confirm Password:
-        <br>
-        <input name="password2" type = "password" value="">
-        <br>
-        <br>
-        <input class="btn btn-primary" type="submit" value="sign up">
-    </form>
+    <div class="content">
+        <div class="content2">
+        <form method= "POST" action ="{% url 'signup' %}">
+            {% csrf_token %} <!--보안을 위해서 써주는 난수 발생기, csrf 방해를 방어해주는 것.-->
+            이름
+            <br>
+            <input id="input" name="name" type = "text" value="">
+            <br>
+            아이디
+            <input id="input" name="username" type = "text" value="">
+            <br>
+            비밀번호
+            <input id="input" name="password1" type = "password" value="">
+            <br>
+            비밀번호 재확인
+            <input id="input" name="password2" type = "password" value="">
+            <br>
+            <br>
+            <input id="submit" type="submit" value="회원가입">
+        </form>
+        </div>
+    </div>
 </body>
 </html>
 
