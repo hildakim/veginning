@@ -9,13 +9,13 @@
 <section class="main-slider">
     <ul class="slider-container">
         <li class="slide">
-            <img class="slide-img" src="{% static 'banner1.png' %}">
+            <a href="#"><img class="slide-img" src="{% static 'banner1.png' %}"></a>
         </li>
         <li class="slide">
-            <img class="slide-img" src="{% static 'banner2.png' %}">
+            <a href="#"><img class="slide-img" src="{% static 'banner2.png' %}"></a>
         </li>
         <li class="slide">
-            <img class="slide-img" src="{% static 'banner3.png' %}">
+            <a href="#"><img class="slide-img" src="{% static 'banner3.png' %}"></a>
         </li>
     </ul>
 
@@ -31,25 +31,41 @@
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
                     <div class="prd-thumb"><img src="{% static 'noodle.jpg' %}"></div>
-                    <div class="prd-info"><span>맛있는 라면</span><br><p>4000원</p></div>
+                    <div class="prd-info">
+                        <a class="prd-link" href="#" style="text-decoration: none;color:black;">[삼양]맛있는 라면 비건</a>
+                        <br>
+                        <p>3,800원</p>
+                    </div>
                 </div>
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
                     <div class="prd-thumb"><img src="{% static 'mayo.jpg' %}"></div>
-                    <div class="prd-info"><span>마요네즈</span><br><p>4000원</p></div>
+                    <div class="prd-info">
+                        <a class="prd-link" href="#" style="text-decoration: none;color:black;">[오뚜기]담백한 소이마요</a>
+                        <br>
+                        <p>4,900원</p>
+                    </div>
                 </div>
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
                     <div class="prd-thumb"><img src="{% static 'activia.jpg' %}"></div>
-                    <div class="prd-info"><span>식물성 액티비아</span><br><p>4000원</p></div>
+                    <div class="prd-info">
+                        <a class="prd-link" href="#" style="text-decoration: none;color:black;">[풀무원다논]식물성 액티비아</a>
+                        <br>
+                        <p>3,450원</p>
+                    </div>
                 </div>
             </li>
             <li class="prd-best-item">
                 <div class="wrap_prd-best-item">
                     <div class="prd-thumb"><img src="{% static 'zeromeat.jpg' %}"></div>
-                    <div class="prd-info"><span>비건 한입까스</span><br><p>4000원</p></div>
+                    <div class="prd-info">
+                        <a class="prd-link" href="#" style="text-decoration: none;color:black;">고기대신 비건 한입까스</a>
+                        <br>
+                        <p>7,980원</p>
+                    </div>
                 </div>
             </li>
             
@@ -61,12 +77,14 @@
 <section class="main-community">
     <div class="box_community-best">
         <h2>커뮤니티 인기글</h2>
-        <a class="more_link">더보기</a>
+        <a class="more_link" href="{% url 'free' %}">더보기</a>
         <div class="wrapper_table">
             <table class="table_best-post">
                 <tr>
                     <td rowspan="2" class="best-post-thumb"><img src="{% static 'vegan-food.jpg' %}"></td>
-                    <td class="best-post-title">연남동 비건 식당 후기</td>
+                    <td class="best-post-title">
+                        <a class="post-link" href="#" style="text-decoration: none;color:black;">연남동 비건 식당 후기</a>
+                    </td>
                 </tr>
                 <tr>
                     <td class="best-post-body">며칠 전 연남동에 위치한 비건 식당에 방문했다. 간판이 너무 작아서 그냥 지나칠 뻔했다. (가실 분들은 참조!) 가격대는 조금 있는 편이라서 지갑 얇...</td>
@@ -75,7 +93,9 @@
             <table class="table_best-post">
                 <tr>
                     <td rowspan="2" class="best-post-thumb"><img src="{% static 'tteok.png' %}"></td>
-                    <td class="best-post-title">비건 떡볶이 레시피 공유해요!</td>
+                    <td class="best-post-title">
+                        <a class="post-link" href="#" style="text-decoration: none;color:black;">비건 떡볶이 레시피 공유해요!</a>
+                    </td>
                 </tr>
                 <tr>
                     <td class="best-post-body">한국인과 뗄레야 뗄 수 없는 한국인의 소울푸드 떡볶이를 비건식으로 만들어 봤어요. 준비해야할 재료는 떡 한 봉지와 당근, 애호박, 간장, 참기름, 조청...</td>
